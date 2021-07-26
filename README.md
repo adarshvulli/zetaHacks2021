@@ -40,10 +40,7 @@ pip install -r requirements.txt
 ```bash
   python manage.py runserver
 ```
-**6. Create admin**
 
-```bash
-  python manage.py createsuperuser
-```
+
 
 **5.** Go to ` http://127.0.0.1:8000/` and enjoy the application.
