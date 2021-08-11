@@ -10,30 +10,41 @@ def index(request):
     return render(request, 'index.html')
 def admindash(request):
     return render(request, 'Dashboard Admin/admindash.html')
+def empdash(request):
+    return render(request, 'Dashboard Employee/empdash.html')  
+def personal_details(request):
+    return render(request, 'Dashboard Employee/personal_details.html')     
+def statistics(request):
+    return render(request, 'Dashboard Employee/statistics.html') 
+def account_details(request):
+    return render(request, 'Dashboard Employee/account_details.html')
 def admin_login(request):
+    username1='admin'
+    password1='admin'
     if request.method=='POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
-        
-        admin=authenticate(username=username,password=password)
-        if admin is not None:
-            login(request,admin)
+        if username1==username and password1==password:
             return redirect('admindash')
         else:
-            return render(request, 'admin_login.html')
+            return render( request, 'admin_login.html')    
+        
+
     else:
         return render(request, 'admin_login.html')
 
             
 def user_login(request):
-    username='john'
-    password='john'
+    username2='john'
+    password2='john'
     #authentication
     if request.method=='POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
-        if username==username and password==password:
-            return redirect('/')
+        if username2==username and password2==password:
+            return redirect('empdash')
+        else:
+            return render( request, 'login.html')    
         
 
     else:
