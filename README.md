@@ -1,4 +1,22 @@
-# zetaHacks2021
+#  Zeta Hacks
+# Morpho
+ <p align="center"><img src="https://github.com/adarshvulli/zetaHacks2021/blob/main/static/assets/img/final%20logo.png"></p>
+        
+
+## 📋 Description:
+We developed a user-friendly employee payroll management system. Here we have mainly focused on the over-expectation and the user interface on how the final product would be. we significantly added separate features for the primary admin and an employee, where both of them have their specific features incorporated into their respective dashboards created specifically 
+
+## 💻Tech Stack used:
+- Frontend: HTML , CSS , JavaScript
+- Backend : php,Django
+- FrameWork : Bootstarp
+- Deployment : AWS
+
+## ⚙ Future scope of Development:
+- Making the entire Site responsive on devices
+- Adding more options for the primary master or the entire set of people who distributes the pay 
+- Making the static employee dashboard dynamic 
+- Making the visualization parts dynamic that would change with the new data added periodically 
 
 ## 🚀 Quick Start :
 
