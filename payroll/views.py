@@ -18,35 +18,37 @@ def statistics(request):
     return render(request, 'Dashboard Employee/statistics.html') 
 def account_details(request):
     return render(request, 'Dashboard Employee/account_details.html')
-def admin_login(request):
-    username1='admin'
-    password1='admin'
-    if request.method=='POST':
-        username=request.POST.get('username')
-        password=request.POST.get('password')
-        if username1==username and password1==password:
-            return redirect('admindash')
-        else:
-            return render( request, 'admin_login.html')    
+# def admin_login(request):
+#     username1='admin'
+#     password1='admin'
+#     if request.method=='POST':
+#         username=request.POST.get('username')
+#         password=request.POST.get('password')
+#         if username1==username and password1==password:
+#             return redirect('admindash')
+#         else:
+#             return render( request, 'login.html')    
         
 
-    else:
-        return render(request, 'admin_login.html')
+#     else:
+#         return render(request, 'login.html')
 
             
 def user_login(request):
     username2='john'
     password2='john'
+    username1='admin'
+    password1='admin'
     #authentication
     if request.method=='POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
         if username2==username and password2==password:
             return redirect('empdash')
+        elif username1==username and password1==password:
+            return redirect('admindash')    
         else:
-            return render( request, 'login.html')    
-        
-
+            return render( request, 'login.html')  
     else:
         return render(request, 'login.html')
 def logout(request):
@@ -69,4 +71,22 @@ def adminadd(request):
              
 
 
+def view_employee(request):
+    emps=Employee.objects.all()
+    return render(request, 'view_employee.html',{'emps':emps})
+
+def delete(request,id):
+    emps=Employee.objects.get(id=id)
+    emps.delete()
+    return redirect('/view_employee')
+def edit(request,id):
+    students=Employee.objects.get(id=id)
     
+    return render(request,'edit.html',{'students':students})    
+def update(request,id):
+    students=Employee.objects.get(id=id)
+    
+    form=EmployeeForm(request.POST,instance=students)
+    if form.is_valid:
+        form.save()
+        return redirect('/std')
