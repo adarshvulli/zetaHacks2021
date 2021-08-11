@@ -80,13 +80,13 @@ def delete(request,id):
     emps.delete()
     return redirect('/view_employee')
 def edit(request,id):
-    students=Employee.objects.get(id=id)
+    emps=Employee.objects.get(id=id)
     
-    return render(request,'edit.html',{'students':students})    
+    return render(request,'edit_employee.html',{'emps':emps})    
 def update(request,id):
-    students=Employee.objects.get(id=id)
+    emps=Employee.objects.get(id=id)
     
-    form=EmployeeForm(request.POST,instance=students)
+    form=EmployeeForm(request.POST,instance=emps)
     if form.is_valid:
         form.save()
-        return redirect('/std')
+        return redirect('/view_employee')

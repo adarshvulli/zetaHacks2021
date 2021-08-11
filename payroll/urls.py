@@ -11,7 +11,10 @@ urlpatterns = [
     path('personal_details/',views.personal_details,name='personal_details'),
     path('statistics/',views.statistics,name='statistics'),
     path('account_details/',views.account_details,name='account_details'),
-    path('view_employee/',views.view_employee,name='view_employee')
+    path('view_employee/',views.view_employee,name='view_employee'),
+    path('delete/<int:id>',views.delete),
+    path('edit/<int:id>',views.edit),
+    path('update/<int:id>',views.update)
 
 
     ]

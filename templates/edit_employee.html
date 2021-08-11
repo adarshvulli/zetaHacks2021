@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Form | Morpho</title>
+    <link href="assets/img/final logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">  
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+            body {
+        font-family: "Open Sans", sans-serif;
+        color: #444444;
+        /*overflow: hidden;*/
+        height: 100%;
+        background-image: url("assets/img/background.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+
+    .card {
+        padding: 30px 40px;
+        
+        margin-bottom: 60px;
+        border: none !important;
+        border-radius: 35px;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.8);
+        
+        
+    }
+
+    .blue-text {
+        color: #00BCD4
+    }
+
+    .form-control-label {
+        margin-bottom: 0
+    }
+
+    input,
+    textarea,
+    button {
+        padding: 8px 15px;
+        border-radius: 5px !important;
+        margin: 5px 0px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        font-size: 18px !important;
+        font-weight: 300
+    }
+
+    input:focus,
+    textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid #00BCD4;
+        outline-width: 0;
+        font-weight: 400
+    }
+
+    .btn-block {
+        text-transform: uppercase;
+        font-size: 15px !important;
+        font-weight: 400;
+        height: 43px;
+        cursor: pointer;
+        background: #4154f1;
+    }
+
+    .btn-block:hover {
+        color: #fff !important
+    }
+
+    button:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        outline-width: 0
+    }
+    </style>
+</head>   
+
+<body>
+
+   
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+               <!-- <h3><img src="assets/img/final logo.png" alt="" height="50" width="50"></h3>
+                <h3 style="color: #012970; font-size: 35px;"><b>Morpho</b></h3>
+                 -->
+                <div class="card">
+                    <h5 class="text-center mb-4" style="color: #012970; font-size: 35px;"><b>Admin Dashboard</b></h5>
+                    <form method="POST" action="/update/{{ emps.id }}" class="form-card">
+                        {% csrf_token %}
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="fname" value="{{emps.fname}}" placeholder="Enter your first name" onblur="validate(1)" required> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" value="{{emps.lname}}" placeholder="Enter your last name" onblur="validate(2)" required> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Business email<span class="text-danger"> *</span></label> <input type="email" id="email" name="email" value="{{emps.email}}" placeholder="eg. abc@morph.com" onblur="validate(3)" required> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" value="{{emps.mob}}" placeholder="eg. 1234567890" onblur="validate(4)"required> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Username<span class="text-danger"> *</span></label> <input type="email" id="email" name="username" value="{{emps.username}}" placeholder="username" onblur="validate(3)" required> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Password<span class="text-danger"> *</span></label> <input type="password" id="mob" name="password" value="{{emps.password}}" placeholder="password" onblur="validate(4)"required> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Job title<span class="text-danger"> *</span></label> <input type="text" id="job" name="job" value="{{emps.job}}" placeholder="" onblur="validate(5)"required> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Date of Joining<span class="text-danger"> *</span></label> <input type="date" id="job" name="doj" value="{{emps.doj}}" placeholder="eg. dd/mm/yyyy" onblur="validate(5)"required> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Account Number<span class="text-danger"> *</span></label> <input type="text" id="accno" name="accno" value="{{emps.accno}}" placeholder="" onblur="validate(3)"required> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">IFSC Code<span class="text-danger"> *</span></label> <input type="text" id="mob" name="ifsc" value="{{emps.ifsc}}" placeholder="" onblur="validate(4)"required> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Pay Scale<span class="text-danger"> *</span></label> <input type="text" id="ans" name="payscale" value="{{emps.payscale}}" placeholder="" onblur="validate(6)"required> </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="form-group flex-column d-flex col-sm-6 text-center"> <button type="submit" class="btn-block btn-primary">Submit</button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+<script>
+    function validate(val) {
+v1 = document.getElementById("fname");
+v2 = document.getElementById("lname");
+v3 = document.getElementById("email");
+v4 = document.getElementById("mob");
+v5 = document.getElementById("job");
+v6 = document.getElementById("ans");
+
+flag1 = true;
+flag2 = true;
+flag3 = true;
+flag4 = true;
+flag5 = true;
+flag6 = true;
+
+if(val>=1 || val==0) {
+if(v1.value == "") {
+v1.style.borderColor = "red";
+flag1 = false;
+}
+else {
+v1.style.borderColor = "green";
+flag1 = true;
+}
+}
+
+if(val>=2 || val==0) {
+if(v2.value == "") {
+v2.style.borderColor = "red";
+flag2 = false;
+}
+else {
+v2.style.borderColor = "green";
+flag2 = true;
+}
+}
+if(val>=3 || val==0) {
+if(v3.value == "") {
+v3.style.borderColor = "red";
+flag3 = false;
+}
+else {
+v3.style.borderColor = "green";
+flag3 = true;
+}
+}
+if(val>=4 || val==0) {
+if(v4.value == "") {
+v4.style.borderColor = "red";
+flag4 = false;
+}
+else {
+v4.style.borderColor = "green";
+flag4 = true;
+}
+}
+if(val>=5 || val==0) {
+if(v5.value == "") {
+v5.style.borderColor = "red";
+flag5 = false;
+}
+else {
+v5.style.borderColor = "green";
+flag5 = true;
+}
+}
+if(val>=6 || val==0) {
+if(v6.value == "") {
+v6.style.borderColor = "red";
+flag6 = false;
+}
+else {
+v6.style.borderColor = "green";
+flag6 = true;
+}
+}
+
+flag = flag1 && flag2 && flag3 && flag4 && flag5 && flag6;
+
+return flag;
+}
+</script>
+</body>
+</html>
