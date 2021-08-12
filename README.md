@@ -13,7 +13,7 @@ We developed a user-friendly employee payroll management system. Here we have ma
 - Deployment : AWS
 
 ## ⚙ Future scope of Development:
-- Making the entire Site responsive on devices
+- Making the entire Site responsive on devices rather than a mobile device
 - Adding more options for the primary master or the entire set of people who distributes the pay 
 - Making the static employee dashboard dynamic 
 - Making the visualization parts dynamic that would change with the new data added periodically 
