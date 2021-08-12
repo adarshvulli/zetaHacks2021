@@ -14,7 +14,8 @@ urlpatterns = [
     path('view_employee/',views.view_employee,name='view_employee'),
     path('delete/<int:id>',views.delete),
     path('edit/<int:id>',views.edit),
-    path('update/<int:id>',views.update)
+    path('update/<int:id>',views.update),
+    path('payscale/',views.payscale,name='payscale'),
 
 
     ]

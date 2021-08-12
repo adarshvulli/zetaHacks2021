@@ -4489,12 +4489,22 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  /* background-color: #fff; */
   background-clip: border-box;
-  border: 1px solid #e3e6f0;
+  /* border: 1px solid #e3e6f0; */
   border-radius: 0.35rem;
 }
+.card2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
 
+  background-clip: border-box;
+
+  border-radius: 0.35rem;
+}
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -4552,7 +4562,7 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: #f8f9fc;
+  /* background-color: #f8f9fc; */
   border-bottom: 1px solid #e3e6f0;
 }
 
