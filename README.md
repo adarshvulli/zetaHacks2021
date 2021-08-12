@@ -1,8 +1,8 @@
 #  Zeta Hacks
-# Morpho
- <p align="center"><img src="https://github.com/adarshvulli/zetaHacks2021/blob/main/static/assets/img/final%20logo.png"></p>
-        
 
+<h1 align="center">Morpho
+<p align="center"><img src="https://github.com/adarshvulli/zetaHacks2021/blob/main/static/assets/img/final%20logo.png"></p></h1>
+        
 ## 📋 Description:
 We developed a user-friendly employee payroll management system. Here we have mainly focused on the over-expectation and the user interface on how the final product would be. we significantly added separate features for the primary admin and an employee, where both of them have their specific features incorporated into their respective dashboards created specifically 
 
