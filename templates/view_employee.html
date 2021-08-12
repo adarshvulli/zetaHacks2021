@@ -8,13 +8,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Employees</title>
   </head>
   <body>
     <table class="table table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
+     
       <th scope="col">First name</th>
       <th scope="col">Last name</th>
       <th scope="col">Email</th>
@@ -30,11 +30,11 @@
   <tbody>
   {% for emp in emps %}
     <tr>
-      <th scope="row">1</th>
+      
       <td>{{emp.fname}}</td>
       <td>{{emp.lname}}</td>
       <td>{{emp.email}}</td>
-      <td>{{emp.mobile}}</td>
+      <td>{{emp.mob}}</td>
       <td>{{emp.job}}</td>
       <td>{{emp.doj}}</td>
       <td>{{emp.ifsc}}</td>
