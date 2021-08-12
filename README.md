@@ -8,8 +8,8 @@ We developed a user-friendly employee payroll management system. Here we have ma
 
 ## 💻Tech Stack used:
 - Frontend: HTML , CSS , JavaScript
-- Backend : Python(Django)
-- FrameWork : Bootstarp
+- Backend : Python
+- FrameWork : Django, Bootstarp
 - Deployment : AWS
 
 ## ⚙ Future scope of Development:
